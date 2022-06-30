@@ -1,0 +1,10 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  height: 100%;
+  font-size: 12px;
+  font-family: "Inter", "sans-serif", "BlinkMacSystemFont", "-apple-system", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial";
+  /* color: var(--app-blue-four); */
+  background-color: #E5E5E5;
+}
