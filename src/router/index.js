@@ -6,6 +6,11 @@ const routes = [
     path: '/',
     component: () => import(/* webpackChunkName: "ProductsList" */ '@/views/ProductsList.vue'),
   },
+  {
+    name: 'Cart',
+    path: '/cart',
+    component: () => import(/* webpackChunkName: "Cart" */ '@/views/Cart.vue'),
+  },
 ];
 
 // Create a new router instance.
