@@ -19,12 +19,12 @@ Ajouter un fichier .env à la racine du projet en ajoutant les variables comme d
 J'ai pris le choix de réaliser ce test technique en Javascript, avec l'aide du framework VueJS (Vue 3).
 
 Le projet se découpe de la manière suivante:
--api : contient les appels vers l'api
--components: contient les différents composants utilisés dans les pages
--i18n: contient les chaînes de traduction
--router: contient le router de l'application
--store: contient le store de l'application
--views: contient les pages de l'application (SFC)
+- api : contient les appels vers l'api
+- components: contient les différents composants utilisés dans les pages
+- i18n: contient les chaînes de traduction
+- router: contient le router de l'application
+- store: contient le store de l'application
+- views: contient les pages de l'application (SFC)
 
 Pour différencier la vue 'Mobile' du 'Desktop', j'ai pris le choix d'utiliser les media queries, et notamment le fait que la séparation mobile/desktop se fait à 480px. Les pages adopteront l'affichage mobile si l'écran fait 480 px ou moins, et desktop si 480px ou plus.
 
