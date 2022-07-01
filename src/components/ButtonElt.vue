@@ -21,11 +21,12 @@ export default {
   border: none;
   transition: all 0.3s ease;
   font-size: inherit;
-  @apply bg-gray-200 font-semibold py-1 px-4 rounded-md text-sm text-black;
+  font-size: 1.2rem;
+  @apply bg-gray-button-bg text-lg text-white font-semibold h-full p-3 rounded-md;
 }
 .button-elt:hover {
-  background: rgba(235, 235, 235, 0.8);
   cursor: pointer;
+  @apply bg-gray-button-bg/80;
 }
 .button-elt:focus {
   outline:none;
@@ -33,11 +34,5 @@ export default {
 /* Primary button */
 .button-elt.primary {
   @apply bg-blue-50 text-white;
-}
-/* Secondary button */
-.button-elt.secondary {
-  @apply bg-green-50 text-white;
-}
-.button-elt.secondary:hover {
 }
 </style>
