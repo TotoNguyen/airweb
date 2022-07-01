@@ -16,7 +16,6 @@ export default {
   actions: {
     async getCategories({ commit }) {
       const data = await getCategories();
-      console.log(data);
       commit('SET_CATEGORIES', data);
     }
   }

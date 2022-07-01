@@ -16,7 +16,6 @@ export default {
   actions: {
     async getProducts({ commit }) {
       const data = await getProducts();
-      console.log(data);
       commit('SET_PRODUCTS', data);
     }
   }
