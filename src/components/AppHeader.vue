@@ -1,9 +1,10 @@
 <template>
   <header class="flex justify-between px-8 py-6">
+    <!-- Languages section -->
     <ul class="flex">
-      <li @click="changeLanguage('fr')">Français</li>
-      <li @click="changeLanguage('en')">English</li>
+      <li v-for="l in languages" :key="l.value" :value="l.value" @click="changeLanguage(l.value)">{{ l.name }}</li>
     </ul>
+    <!-- Cart link -->
     <router-link :to="{ name: 'Cart', params: {}}">
       <div class="relative">
         <img src="@/assets/img/cart.svg" />
@@ -18,6 +19,14 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'AppHeader',
+  data() {
+    return {
+      languages: [
+        { value: 'fr', name: 'Français' },
+        { value: 'en', name: 'English' },
+      ]
+    }
+  },
   computed: {
     ...mapGetters({ cartLength: 'cart/cartLength' }),
   },
@@ -38,5 +47,11 @@ export default {
 }
 li {
   @apply px-2
+}
+li:hover {
+  cursor: pointer;
+}
+li + li:before {
+    content: "/ ";
 }
 </style>
