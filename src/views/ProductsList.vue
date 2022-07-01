@@ -18,21 +18,37 @@
       </product-elt>
     </div>
   </section>
+
+  <Teleport to="body">
+    <teleport-modal
+      :open="modalOpened"
+      :is-notif="true"
+      class="notification"
+      @close="modalOpened = false">
+      <template #default><div>{{ $t('productAddedToCart') }}</div></template>
+      <template #footer>
+        <button @click="modalOpened = false">{{ $t('close') }}</button>
+      </template>
+    </teleport-modal>
+  </Teleport>
 </template>
 
 <script>
 import ProductElt from '@/components/Product.vue';
+import TeleportModal from '@/components/TeleportModal.vue';
 import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'ProductsList',
   components: {
     ProductElt,
+    TeleportModal,
   },
   data() {
     return {
       searchText: '',
       resultsArray: [],
+      modalOpened: false,
     }
   },
   computed: {
@@ -67,6 +83,7 @@ export default {
       const product = this.products.find(product => product.id === productId);
       if (product && product.id) {
         this.$store.dispatch('cart/addProductToCart', product);
+        this.modalOpened = true;
       } else {
         console.log('ERREUR : le produit n\'existe pas');
       }
