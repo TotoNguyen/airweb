@@ -1,6 +1,9 @@
 <template>
   <header class="flex justify-between px-8 py-6">
-    <div>test</div>
+    <ul class="flex">
+      <li @click="changeLanguage('fr')">Français</li>
+      <li @click="changeLanguage('en')">English</li>
+    </ul>
     <router-link :to="{ name: 'Cart', params: {}}">
       <div class="relative">
         <img src="@/assets/img/cart.svg" />
@@ -17,6 +20,11 @@ export default {
   name: 'AppHeader',
   computed: {
     ...mapGetters({ cartLength: 'cart/cartLength' }),
+  },
+  methods: {
+    changeLanguage(language) {
+      this.$root.$i18n.locale = language;
+    }
   }
 };
 </script>
@@ -27,5 +35,8 @@ export default {
   right: -10px;
   bottom: -10px;
   @apply absolute rounded-full bg-gray-total-bg;
+}
+li {
+  @apply px-2
 }
 </style>
