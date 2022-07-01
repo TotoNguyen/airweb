@@ -1,10 +1,21 @@
 <template>
   <!-- Card -->
   <section class="product-card">
-    <p v-if="mobileWidth">
-      {{ width }}
-      <button-elt @click="addToCart">Bouton</button-elt>
-    </p>
+    <!-- Mobile display-->
+    <div v-if="mobileWidth" class="flex">
+      <img :src="data.thumbnail_url" class="rounded-full w-[60px] h-[60px] mx-3 my-auto" />
+      <div class="m-3">
+        <h1 class="text-gray-title">{{ data.label }}</h1>
+        <p class="mt-8">{{ data.description }}</p>
+      </div>
+      <div class="flex flex-col justify-between">
+        <div class="price">{{ data.price }} €</div>
+        <button-elt class="icon-btn mx-auto m-4" @click="addToCart(data.id)">
+          <img class="p-1" src="@/assets/img/add-product.svg" />
+        </button-elt>
+      </div>
+    </div>
+    <!-- Desktop display -->
     <div v-else class="flex flex-col p-3">
       <div class="flex">
         <img :src="data.thumbnail_url" class="rounded-full w-[60px] h-[60px]" />
