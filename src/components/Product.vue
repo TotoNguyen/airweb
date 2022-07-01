@@ -66,7 +66,7 @@ export default {
   @apply bg-white text-gray-text text-left rounded-xl mt-8 drop-shadow-md;
 }
 .price {
-  font-size: 1.4rem;
-  @apply p-2 bg-gray-price-bg text-black-text font-semibold rounded-md;
+  /* font-size: 1.4rem; */
+  @apply nomobile:text-lg whitespace-nowrap text-black-text font-semibold bg-gray-price-bg p-2 rounded-md;
 }
 </style>
