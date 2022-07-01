@@ -36,6 +36,6 @@ export default {
   @apply h-full p-3;
 }
 .button-elt.icon-btn {
-  @apply nomobile:h-full nomobile:p-3;
+  @apply nomobile:h-full nomobile:p-3 xs:px-2 xs:py-1 xs:rounded-xl;
 }
 </style>
