@@ -5,18 +5,19 @@
         <img src="@/assets/img/cart.svg" />
         <span class="ml-4 font-semibold">{{ $t('cartTitle')}}</span>
       </h1>
+      <!-- List of products in cart -->
       <div v-for="product of cart" :key="product.id" class="flex justify-between mb-6">
         <div>{{ product.label }}</div>
         <div class="text-black font-semibold">{{ product.price }} €</div>
       </div>
       <!-- Total section -->
       <div class="flex justify-between bg-gray-total-bg font-semibold text-black rounded-md p-3 mb-14">
-        <p>TOTAL</p>
+        <p class="uppercase">{{ $t('total') }}</p>
         <p>{{ totalPrice }} €</p>
       </div>
     </main>
     <footer class="flex justify-end">
-      <button-elt v-if="cart.length > 0" class="primary uppercase">{{ $t('proceedToPayment') }}</button-elt>
+      <button-elt v-if="cart.length > 0" class="primary uppercase" @click="payCart">{{ $t('proceedToPayment') }}</button-elt>
     </footer>
   </section>
 </template>
@@ -38,16 +39,7 @@ export default {
     })
   },
   methods: {
-    addToCart(productId) {
-      console.log(productId);
-      // Check if product id is in the list before adding to cart
-      const product = this.products.find(product => product.id === productId);
-      if (product && product.id) {
-        this.$store.dispatch('cart/addProductToCart', product);
-      } else {
-        console.log('ERREUR : le produit n\'existe pas');
-      }
-    }
+    payCart() {}
   }
 }
 </script>
