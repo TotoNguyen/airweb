@@ -78,6 +78,6 @@ export default {
 }
 .price {
   /* font-size: 1.4rem; */
-  @apply nomobile:text-lg whitespace-nowrap text-black-text font-semibold bg-gray-price-bg p-2 rounded-md;
+  @apply nomobile:text-lg whitespace-nowrap text-black-text font-semibold bg-gray-price-bg p-2 rounded-md xs:rounded-br-none xs:rounded-tl-none;
 }
 </style>
