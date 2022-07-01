@@ -6,7 +6,7 @@ import router from './router';
 // Import translation
 import { createI18n } from 'vue-i18n';
 import translation from './i18n/translation.js';
-console.log(translation);
+
 // Import style
 import '@/assets/styles/main.css';
 import '@/assets/styles/tailwind.css';
