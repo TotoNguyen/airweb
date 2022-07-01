@@ -28,7 +28,7 @@
         <div class="price">{{ data.price }} €</div>
         <button-elt class="icon-btn flex align-middle uppercase" @click="addToCart(data.id)">
           <img src="@/assets/img/add-product.svg" />
-          <span class="pl-4">Ajouter au panier</span>
+          <span class="pl-4">{{ $t('addToCart') }}</span>
         </button-elt>
       </div>
     </div>

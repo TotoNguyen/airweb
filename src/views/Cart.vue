@@ -3,7 +3,7 @@
     <main>
       <h1 class="text-black-text text-xl flex mb-8">
         <img src="@/assets/img/cart.svg" />
-        <span class="ml-4 font-semibold">Votre panier</span>
+        <span class="ml-4 font-semibold">{{ $t('cartTitle')}}</span>
       </h1>
       <div v-for="product of cart" :key="product.id" class="flex justify-between mb-6">
         <div>{{ product.label }}</div>
@@ -16,7 +16,7 @@
       </div>
     </main>
     <footer class="flex justify-end">
-      <button-elt v-if="cart.length > 0" class="primary uppercase">Procéder au paiement</button-elt>
+      <button-elt v-if="cart.length > 0" class="primary uppercase">{{ $t('proceedToPayment') }}</button-elt>
     </footer>
   </section>
 </template>
