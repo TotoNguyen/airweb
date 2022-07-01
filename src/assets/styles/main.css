@@ -8,3 +8,7 @@ html, body {
   /* color: var(--app-blue-four); */
   background-color: #E5E5E5;
 }
+
+#app {
+  margin: 0;
+}
