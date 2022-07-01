@@ -22,7 +22,7 @@ export default {
   transition: all 0.3s ease;
   font-size: inherit;
   font-size: 1.2rem;
-  @apply bg-gray-button-bg text-lg text-white font-semibold h-full p-3 rounded-md;
+  @apply bg-gray-button-bg text-lg text-white font-semibold rounded-md;
 }
 .button-elt:hover {
   cursor: pointer;
@@ -33,6 +33,9 @@ export default {
 }
 /* Primary button */
 .button-elt.primary {
-  @apply bg-blue-50 text-white;
+  @apply h-full p-3;
+}
+.button-elt.icon-btn {
+  @apply nomobile:h-full nomobile:p-3;
 }
 </style>
