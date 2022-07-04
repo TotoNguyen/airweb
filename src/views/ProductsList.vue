@@ -4,11 +4,11 @@
     <input
       v-model="searchText"
       type="text"
-      class="mb-8 p-2 rounded-lg mx-4"
+      class="list-padding mb-8 p-2 rounded-lg"
       :placeholder="$t('searchPlaceholder')"
       @input="filterProducts" />
     <!-- Display list of products per category -->
-    <div v-for="category of resultsArray" :key="category.id" class="nomobile:w-1/2 m-auto mb-14 xs:px-4">
+    <div v-for="category of resultsArray" :key="category.id" class="list-padding mb-14">
       <h1 class="text-[16px] text-left font-semibold">{{ category.label }}</h1>
       <product-elt
         v-for="p of category.products"
@@ -101,4 +101,7 @@ export default {
 </script>
 
 <style scoped>
+.list-padding {
+  @apply nomobile:w-1/2 m-auto xs:px-4;
+}
 </style>
